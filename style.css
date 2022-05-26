@@ -1,0 +1,207 @@
+/* font-family: 'Damion', cursive;
+font-family: 'Fleur De Leah', cursive;
+font-family: 'Nanum Pen Script', cursive;
+font-family: 'Reenie Beanie', cursive;
+font-family: 'Rock Salt', cursive; */
+
+*,
+*::before,
+*::after {
+  font-family: inherit;
+  box-sizing: content-box;
+}
+
+body {
+  font-family: 'Rock Salt', cursive;
+
+  width: 100%;
+  background-image: url('./images/todo.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: bisque;
+  margin: 0;
+  font-weight: 700;
+  font-size: 1.5rem;
+  display: grid;
+  grid: "header header header header" auto "...... lists  active ......" auto/1fr minmax(100px, 300px) minmax(250px, 500px) 1fr;
+}
+
+h1, .title {
+  width: 100%;
+  transform: rotate(-8deg);
+}
+.title {
+  grid-area: header;
+  text-align: center;
+  font-size: 4rem;
+  font-weight: 900;
+  color: white;
+  letter-spacing: 3px;
+  margin-right: 27rem;
+}
+
+.all-tasks {
+
+  grid-area: lists;
+  color: white;
+  display: inline;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 3rem;
+  border-bottom-right-radius: 20%;
+  box-shadow: 50px 50px 100px black;
+}
+
+.task-list {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  list-style: none;;
+}
+
+.list-name {
+  cursor: pointer;
+  font-weight: bolder;
+  font-size: 2rem;;
+  margin-left:1rem;
+  transition: color 0.5s;
+}
+
+.list-name:hover {
+  animation: pop 0.4s ease-in-out;
+  animation-iteration-count: infinite;
+  transform: rotate(5deg);
+  color: green;
+}
+
+@keyframes pop {
+  50% {
+    transform: scale(1.25);
+  }
+}
+form {
+  display: flex;
+
+}
+
+::placeholder {
+  color: white;
+  opacity: 0.8;
+}
+
+input {
+  color: white;
+}
+
+.btn {
+  cursor: pointer;
+  background: 0;
+  border: 0;
+  padding: 0;
+  color: white;
+}
+
+.btn.create {
+  font-size: 3rem;
+  font-weight: 900;
+  color: green;
+}
+
+.btn.create:hover {
+  transition: ease-in 0.3s;
+  opacity: 1;
+  color: rgb(193, 227, 57);
+  animation: pop 0.4s ease-in-out;
+}
+
+.new {
+  background: transparent;
+  width: 80%;
+  border: 0;
+  border-bottom: 3px solid white;
+  font-size: inherit;
+  outline: none;
+  order: 2;
+}
+
+.list-title {
+  color: white;
+  width: 100%;
+  text-align: center
+  ;
+}
+
+.todo-list {
+  grid-area: active;
+  font-size: 2rem;
+  border-radius: 10% 10% 20%;
+}
+
+.todo-header {
+  display: flex;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 15px 15px 0px 0px; 
+}
+
+p.task-count {
+  color: white;
+  font-size: 0.5em;
+}
+.todo-body {
+  background: rgba(0, 0, 0, 0.8);
+  position: relative;
+  border-radius: 0px 0px 15px 15px;
+  box-shadow: 50px 50px 100px black;
+}
+
+.new-task-creator {
+  color: white;
+}
+
+.task label {
+  align-items: center;
+  font-size: 2rem;
+  margin-left: 1rem;
+}
+
+.task {
+  display: flex;
+  position: relative;
+  color: white;
+  flex-wrap: wrap;
+}
+
+.task::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: -0.5em;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.1;
+}
+
+.delete-stuff {
+  display: flex;
+  text-align: center;
+  align-content: space-around;
+  border-radius: 0px 0px 15px 15px;
+}
+
+
+.btn.delete {
+  display: inline;
+  justify-content: space-around;
+  font-size: 2rem;
+  transition: color 0.2s;
+  ;
+}
+
+.btn.delete:hover {
+  color: rgb(255, 0, 0);
+  transform: rotate(5deg);
+  animation: pop 0.4s ease-in;
+  animation-iteration-count: infinite;
+}
